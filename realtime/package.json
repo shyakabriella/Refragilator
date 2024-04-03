@@ -1,0 +1,23 @@
+{
+  "name": "realtime",
+  "version": "1.0.0",
+  "description": "the real time app of",
+  "main": "index.js",
+  "scripts": {
+    "test": "meme"
+  },
+  "repository": {
+    "type": "git",
+    "url": "nonr"
+  },
+  "keywords": [
+    "refrigerat"
+  ],
+  "author": "Paci ISHIMWE",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.16.2",
+    "mysql": "^2.17.1",
+    "socket.io": "^2.0.4"
+  }
+}
