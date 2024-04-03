@@ -17,6 +17,10 @@ io.on('connection', function (socket) {
     socket.on("add_me", function(msg){
         console.log(msg);
     })
+
+    socket.on("new_temperature", function(msg){
+        console.log(msg);
+    })
 });
 
 server.listen(8080, () => {

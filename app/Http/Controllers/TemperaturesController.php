@@ -36,6 +36,10 @@ class TemperaturesController extends Controller
         // Return a view, passing the temperature data to it
         return view('managerHome', compact('temperatures'));
     }
+
+    public function WeeklyTemperature(Request $request){
+        return "ooo";
+    }
     
     
 }

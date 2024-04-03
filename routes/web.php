@@ -38,6 +38,8 @@ Route::get('/temperature-monitorings', [TemperatureMonitoringController::class, 
 Route::get('/manager-home', [HomeController::class, 'managerHome'])->name('manager-home');
 Route::get('/temperatures', [TemperaturesController::class, 'show'])->name('temperatures.show');
 
+Route::get("/mobile_connect",[TemperaturesController::class, 'WeeklyTemperature'])->name("temperatures.weekly");
+
 
 
 
