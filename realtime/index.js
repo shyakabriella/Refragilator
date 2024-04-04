@@ -20,9 +20,10 @@ io.on('connection', function (socket) {
 
     socket.on("new_temperature", function(msg){
         console.log(msg);
+        socket.emit("display_temperature", msg);
     })
 });
 
-server.listen(8080, () => {
-    console.log('real time refrigerat is on 8080');
+server.listen(8000, () => {
+    console.log('real time refrigerat is on 8000');
 });
