@@ -40,6 +40,7 @@ Route::get('/temperatures', [TemperaturesController::class, 'show'])->name('temp
 
 Route::get("/mobile_connect",[TemperaturesController::class, 'WeeklyTemperature'])->name("temperatures.weekly");
 
+//Route::get("/")
 
 
 
