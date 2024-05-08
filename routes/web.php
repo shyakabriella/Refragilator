@@ -47,6 +47,9 @@ Route::get("/mobile_app/delete_device",[DeviceControllerX::class, 'DelDevice'])-
 Route::post('/mobile_app/all_device_list', [DeviceControllerX::class, 'getAllDevices'])->name("device.view");
 
 
+Route::get('/mobile_app/refrigilat',[TemperaturesController::class, 'lastTemperatures'])->name("temperature.view_last");
+
+Route::get('/mobile_app/refrigilat7',[TemperaturesController::class,'lastSevenDaysHighestTemperatures'])->name("temperature.last_seven");
 
 
 

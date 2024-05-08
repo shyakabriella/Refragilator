@@ -5,6 +5,8 @@ use Illuminate\Pagination\LengthAwarePaginator;
 use Illuminate\Pagination\Paginator;
 use Illuminate\Support\Arr;
 
+use App\Models\Temperature;
+
 
 use Illuminate\Http\Request;
 use App\Models\TemperatureMonitoring; // Make sure to use your actual model
@@ -40,6 +42,23 @@ class TemperaturesController extends Controller
     public function WeeklyTemperature(Request $request){
         return "ooo";
     }
-    
-    
+
+    public function lastTemperatures()
+    {
+        $temperatures = Temperature::orderBy('time_int', 'ASC')->limit(7)->get();
+        return response()->json($temperatures);
+    }
+
+    public function lastSevenDaysHighestTemperatures()
+    {
+        // Retrieve the highest temperature for each of the last 7 days
+        $highestTemperatures = DB::table('temperatures')
+            ->select(DB::raw('DATE(time_int) AS date'), DB::raw('MAX(celsius) AS max_temperature'))
+            ->where('time_int', '>=', now()->subDays(7)->startOfDay()) // Filter records for the last 7 days
+            ->groupBy('date')
+            ->orderBy('date', 'DESC') // Order by date in descending order (most recent first)
+            ->get();
+
+        return response()->json($highestTemperatures);
+    }
 }
