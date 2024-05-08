@@ -42,7 +42,9 @@ Route::get('/temperatures', [TemperaturesController::class, 'show'])->name('temp
 Route::get("/mobile_connect",[TemperaturesController::class, 'WeeklyTemperature'])->name("temperatures.weekly");
 
 Route::post("/mobile_app/new_device",[DeviceControllerX::class, 'NewDevice'])->name("device.new");
-Route::post("/mobile_app/delete_device",[DeviceControllerX::class, 'DelDevice'])->name("device.new");
+Route::get("/mobile_app/delete_device",[DeviceControllerX::class, 'DelDevice'])->name("device.remove");
+
+Route::post('/mobile_app/all_device_list', [DeviceControllerX::class, 'getAllDevices'])->name("device.view");
 
 
 
