@@ -6,6 +6,7 @@ use App\Http\Controllers\PageController;
 use App\Http\Controllers\TemperatureMonitorContactController;
 use App\Http\Controllers\TemperatureMonitoringController;
 use App\Http\Controllers\TemperaturesController;
+use App\Http\Controllers\DeviceControllerX;
 
 /*
 
@@ -40,7 +41,8 @@ Route::get('/temperatures', [TemperaturesController::class, 'show'])->name('temp
 
 Route::get("/mobile_connect",[TemperaturesController::class, 'WeeklyTemperature'])->name("temperatures.weekly");
 
-//Route::get("/")
+Route::post("/mobile_app/new_device",[DeviceControllerX::class, 'NewDevice'])->name("device.new");
+Route::post("/mobile_app/delete_device",[DeviceControllerX::class, 'DelDevice'])->name("device.new");
 
 
 
